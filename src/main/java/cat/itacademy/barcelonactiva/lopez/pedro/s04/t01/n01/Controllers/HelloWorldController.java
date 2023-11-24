@@ -20,7 +20,7 @@ public class HelloWorldController {
 	
 	@RequestMapping(value = {"/HelloWorld/", "/HelloWorld/{n}"})
 	@ResponseBody
-	public String hi2(@PathVariable(name= "n", required= false) Optional<String> optionalName) {
+	public String hi2(@PathVariable(name= "n") Optional<String> optionalName) {
 		return (optionalName.isPresent())? "Hi " + optionalName.get() + ", you are in" : "Hi " + optionalName.orElse("UNKNOWN") + ", you are in";	
 	}
 
