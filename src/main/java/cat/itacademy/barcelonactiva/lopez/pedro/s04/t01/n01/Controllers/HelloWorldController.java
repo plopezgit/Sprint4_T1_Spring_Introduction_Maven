@@ -19,7 +19,7 @@ public class HelloWorldController {
 	@RequestMapping(value = {"/HelloWorld/{n}"})
 	@ResponseBody
 	public String hi2(@PathVariable(name = "n") String name) {
-		return "Hi " + name + ", you are in";
+		return (name.isEmpty())? "UNKNOWN": "Hi " + name + ", you are in";
 	}
 
 	/*
