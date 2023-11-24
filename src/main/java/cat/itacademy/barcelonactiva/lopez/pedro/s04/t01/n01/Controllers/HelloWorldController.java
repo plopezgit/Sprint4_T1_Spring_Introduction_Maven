@@ -1,8 +1,16 @@
-package cat.itacademy.barcelonactiva.cognoms.nom.s04.t01.n01.Controllers;
+package cat.itacademy.barcelonactiva.lopez.pedro.s04.t01.n01.Controllers;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("http://localhost:9000/")
 public class HelloWorldController {
 	
-	public String hi(String name) {
+	@GetMapping("http://localhost:9000/HelloWorld")
+	public String hi(@RequestParam("UNKNOWN") String name) {
 		return "Hi " + name + ", you are in";
 	}
 	
