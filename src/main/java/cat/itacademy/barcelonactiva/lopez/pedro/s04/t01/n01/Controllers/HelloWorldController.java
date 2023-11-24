@@ -1,5 +1,7 @@
 package cat.itacademy.barcelonactiva.lopez.pedro.s04.t01.n01.Controllers;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +18,13 @@ public class HelloWorldController {
 		return "Hi " + name + ", you are in";
 	}
 	
-	@RequestMapping(value = {"/HelloWorld/{n}"})
+	@RequestMapping(value = {"/HelloWorld/", "/HelloWorld/{n}"})
 	@ResponseBody
-	public String hi2(@PathVariable(name = "n") String name) {
-		return (name.isEmpty())? "UNKNOWN": "Hi " + name + ", you are in";
+	public String hi2(@PathVariable(name= "n", required= false) Optional<String> optionalName) {
+		return (optionalName.isPresent())? "Hi " + optionalName.get() + ", you are in" : "Hi " + optionalName.orElse("UNKNOWN") + ", you are in";	
 	}
 
+	
 	/*
 	 * https://www.baeldung.com/spring-optional-path-variables
 	 * https://www.baeldung.com/spring-request-param
