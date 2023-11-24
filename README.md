@@ -25,12 +25,12 @@ We will turn this application into a REST API:
 - [x] These two methods will receive a String parameter called name, and will return the phrase:
 - “Hello, “ + name + “. You are running a Maven project”.
 
-- [ ] The first method will respond to a GET request, and must be configured to receive the parameter as a RequestParam. The "name" parameter will have the default value "UNKNOWN". You will have to answer to:
+- [x] The first method will respond to a GET request, and must be configured to receive the parameter as a RequestParam. The "name" parameter will have the default value "UNKNOWN". You will have to answer to:
 
 - http://localhost:9000/HelloWorld
 - http://localhost:9000/HelloWorld?name=My name
 
-- [ ] The second method will respond to a GET request, and must be configured to receive the parameter as a PathVariable. The "name" parameter will be optional. You will have to answer to:
+- [x] The second method will respond to a GET request, and must be configured to receive the parameter as a PathVariable. The "name" parameter will be optional. You will have to answer to:
 
 - http://localhost:9000/HelloWorld2
 - http://localhost:9000/HelloWorld2/myname
